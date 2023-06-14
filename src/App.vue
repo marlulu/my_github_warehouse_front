@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <initial-page></initial-page>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import {useRouter} from "vue-router/dist/vue-router";
+import InitialPage from "@/project/initial/Initial";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+
+  name: "App",
+  components: {InitialPage},
+
+  setup() {
+    const router = useRouter();
+    function goto(){
+      router.push("/initial");
+    }
+    return{
+      goto
+    }
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+
