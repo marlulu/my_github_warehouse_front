@@ -1,27 +1,24 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import Initial from "@/project/initial/Initial";
 
+import Regist from "@/project/initial/account/Regist";
+import Login from "@/project/initial/account/Login";
 
 
 const routes = [
 // 路由的默认路径
     {
         path:'/',
-        redirect:"/initial"
+        redirect:"/login"
     },
     {
-        path: '/initial',
-        component: Initial
+        path: '/login',
+        component: Login
     },
-    // {
-    //     path: '/about',
-    //     component: About
-    // },
-    // {
-    //     path: '/movie',
-    //     component: Movie
-    // }
+    {
+        path: '/regist',
+        component: Regist
+    }
 ]
 
 // 创建路由对象

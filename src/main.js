@@ -8,3 +8,5 @@ import 'ant-design-vue/dist/antd.css';
  * 挂载路由和antd组件到vue上
  */
 createApp(App).use(router).use(Antd).mount('#app')
+
+

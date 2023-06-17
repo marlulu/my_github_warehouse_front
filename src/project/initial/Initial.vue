@@ -1,11 +1,13 @@
 <template>
-  <div></div>
-
+  <div class="initial">
+    <router-view></router-view>
+  </div>
 </template>
 
-<script>
-export default {
-  name: "initialPage"
-}
-</script>
 
+<script>
+  export default {
+    name: "initialPage",
+    components: {},
+  }
+</script>
