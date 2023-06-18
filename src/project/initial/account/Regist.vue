@@ -192,6 +192,7 @@ export default defineComponent({
   mounted() {
     //进入页面则刷新验证码图片
     this.refreshCode();
+    localStorage.removeItem('token');
   },
 
   name: "registPage",

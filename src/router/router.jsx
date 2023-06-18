@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 import Regist from "@/project/initial/account/Regist";
 import Login from "@/project/initial/account/Login";
+import mainPage from "@/project/projectTemplate/mainPage";
 
 
 const routes = [
@@ -18,7 +19,15 @@ const routes = [
     {
         path: '/regist',
         component: Regist
-    }
+    },
+    {
+        path: '/main',
+        component: mainPage,
+        meta: {
+            requireAuth: true
+
+        },
+    },
 ]
 
 // 创建路由对象

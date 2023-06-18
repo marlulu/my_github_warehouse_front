@@ -56,6 +56,8 @@
   import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
   import {sendSqlite} from "@/api/api";
   import {message} from "ant-design-vue";
+  import router from "@/router/router";
+
 
   export default defineComponent({
 
@@ -64,6 +66,8 @@
         sendSqlite('POST','api/enter/login', this.formState, (res) => {
           if(res.data.code === 200) {
             message.success(res.data.msg)
+            router.push("/main")
+            localStorage.setItem("token", res.data.data.phone)
           } else if(res.data.code === 500) {
             message.error(res.data.msg);
           }
@@ -99,6 +103,10 @@
         }
       },
     name: "loginPage",
+
+    mounted() {
+      localStorage.removeItem('token');
+    },
     data(){
       return {
         style:{
